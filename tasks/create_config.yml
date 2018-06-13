@@ -1,0 +1,13 @@
+---
+- name: Ensuring ~/.aws folder exists
+  file:
+    path: "~/.aws"
+    state: directory
+    mode: 0700
+
+- name: Creating ~/.aws/config file
+  template:
+    src: aws/config
+    dest: ~/.aws/config
+    mode: 0600
+...

@@ -1,0 +1,6 @@
+---
+- name: Removing ~/.aws/config file
+  file:
+    path: ~/.aws/config
+    state: absent
+...

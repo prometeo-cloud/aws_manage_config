@@ -1,0 +1,9 @@
+---
+- name: Creating AWS config file
+  include_tasks: create_config.yml
+  when: (arg_action is not defined) or (arg_action != 'delete')
+
+- name: Deleting AWS config file
+  include_tasks: delete_config.yml
+  when: (arg_action is defined) and (arg_action == 'delete')
+...
